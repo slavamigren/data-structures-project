@@ -27,10 +27,15 @@ class Stack:
         """
         self.top = Node(data, self.top)
 
+
     def pop(self):
         """
         Метод для удаления элемента с вершины стека и его возвращения
 
         :return: данные удаленного элемента
         """
-        pass
+        if self.top is None:
+            return None
+        tmp_node = self.top
+        self.top = self.top.next_node
+        return tmp_node.data

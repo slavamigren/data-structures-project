@@ -2,11 +2,7 @@ class Node:
     """Класс для узла очереди"""
 
     def __init__(self, data, next_node):
-        """
-        Конструктор класса Node
-
-        :param data: данные, которые будут храниться в узле
-        """
+        """Конструктор класса Node"""
         self.data = data
         self.next_node = next_node
 
@@ -19,11 +15,7 @@ class Queue:
         self.tail = None
 
     def enqueue(self, data):
-        """
-        Метод для добавления элемента в очередь
-
-        :param data: данные, которые будут добавлены в очередь
-        """
+        """Метод для добавления элемента в очередь"""
         if not self.head and not self.tail:    #if queue is empty
             self.head = self.tail = Node(data,None)
             return None
@@ -32,10 +24,8 @@ class Queue:
         self.tail = self.tail.next_node
 
     def dequeue(self):
-        """
-        Метод для удаления элемента из очереди. Возвращает данные удаленного элемента
+        """Метод для удаления элемента из очереди. Возвращает данные удаленного элемента
 
-        :return: данные удаленного элемента
 
         if not self.head:    #if queue is empty
             return None

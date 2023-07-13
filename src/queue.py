@@ -24,21 +24,18 @@ class Queue:
         self.tail = self.tail.next_node
 
     def dequeue(self):
-        """Метод для удаления элемента из очереди. Возвращает данные удаленного элемента
-
-
+        """Метод для удаления элемента из очереди. Возвращает данные удаленного элемента"""
         if not self.head:    #if queue is empty
             return None
         if self.head is self.tail:    #if only one item is in the queue
             tmp_point = self.head
             self.head = self.tail = None
-            return tmp_point
+            return tmp_point.data
 
         tmp_point = self.head
-        self.head = self.head.next
-        return tmp_point
-        """
-        pass
+        self.head = self.head.next_node
+        return tmp_point.data
+
 
     def __str__(self):
         """Магический метод для строкового представления объекта"""

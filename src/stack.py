@@ -39,3 +39,12 @@ class Stack:
         tmp_node = self.top
         self.top = self.top.next_node
         return tmp_node.data
+
+
+    def __str__(self):
+        tmp_pointer = self.top
+        data_list = []
+        while tmp_pointer:
+            data_list.append(tmp_pointer.data)
+            tmp_pointer = tmp_pointer.next_node
+        return '\n'.join(data_list)

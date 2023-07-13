@@ -32,3 +32,10 @@ class TestStack(unittest.TestCase):
         self.assertEqual(stack.pop(), 'data1')
         self.assertEqual(stack.pop(), None)
 
+
+    def test__str__(self):
+        stack = Stack()
+        stack.push('data1')
+        stack.push('data2')
+        stack.push('data3')
+        self.assertEqual(str(stack), 'data3\ndata2\ndata1')
